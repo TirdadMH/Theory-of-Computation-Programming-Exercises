@@ -33,9 +33,9 @@ std::string** fillTransitionFunction(int& numberOfStates, int& numberOfAlphabets
 	transitionFunction[D][a] = 'E';
 	transitionFunction[D][b] = NO_STATE;
 	transitionFunction[D][c] = NO_STATE;
-	transitionFunction[D][lambda] = NO_STATE;
+	transitionFunction[D][lambda] = "A, B, C";
 
-	transitionFunction[E][a] = 'A';
+	transitionFunction[E][a] = "A, E";
 	transitionFunction[E][b] = 'B';
 	transitionFunction[E][c] = NO_STATE;
 	transitionFunction[E][lambda] = NO_STATE;

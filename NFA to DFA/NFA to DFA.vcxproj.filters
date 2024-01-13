@@ -38,5 +38,11 @@
     <ClInclude Include="functions\PrintNFA\printNFA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="functions\EliminateLambda\LambdaElimination.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="functions\PrintNFA\PrintELNFA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

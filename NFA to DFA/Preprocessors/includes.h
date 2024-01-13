@@ -5,5 +5,8 @@
 #include <cstring>
 #include "Enums/Alphabet.h"
 #include "Enums/States.h"
+#include <vector>
 #include "../functions/FillingTransition/fillTransitionFunction.h"
 #include "../functions/PrintNFA/printNFA.h"
+#include "../functions/PrintNFA/PrintELNFA.h"
+#include "../functions/EliminateLambda/LambdaElimination.h"

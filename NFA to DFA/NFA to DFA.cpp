@@ -1,16 +1,18 @@
 ﻿#include "Preprocessors/includes.h"
 #include "Preprocessors/defines.h"
 
-std::string** fillTransitionFunction(int&, int&);
+
 
 int main()
 {
 	// First, let's define out input NFA.
-	// 4 first tuple for the NFA:
+	// 3 first tuple for the NFA:
 	char states[] = {'A', 'B', 'C', 'D', 'E'};
 	char alphabet[] = { 'a', 'b', 'c', LAMBDA};
 	char starter = 'A';
-	char finalStates[] = { 'B', 'D' };
+
+	// since the 4th tuple can change along the way of converting NFA to DFA, It's better to be a Vector.
+	std::vector<char> finalStates = { 'B', 'D' };
 	
 	// for 5th tuple which is transition function, We are going to need an the number of states and alphabets:
 	int numberOfStates = sizeof(states) / sizeof(states[0]);
@@ -22,6 +24,9 @@ int main()
 	// Printing the Input NFA in a table format
 	printNFA(transitionFunction);
 
-	// Eliminating the Lambda closure
+	// Step 1: Eliminating the Lambda closure
+	transitionFunction = eliminateLambda(transitionFunction, finalStates, numberOfStates, numberOfAlphabets, states);
 
+	// Printing the Input NFA in a table format with Lambda Transitions Eliminated.
+	printELNFA(transitionFunction);
 }
