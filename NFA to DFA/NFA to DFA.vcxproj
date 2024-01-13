@@ -137,6 +137,7 @@
     <ClInclude Include="functions\CreateNewStates\NewStatesCreator.h" />
     <ClInclude Include="functions\EliminateLambda\LambdaElimination.h" />
     <ClInclude Include="functions\FillingTransition\fillTransitionFunction.h" />
+    <ClInclude Include="functions\PrintDFA\PrintDFA.h" />
     <ClInclude Include="functions\PrintNFA\PrintELNFA.h" />
     <ClInclude Include="functions\PrintNFA\printNewNFA.h" />
     <ClInclude Include="functions\PrintNFA\printNFA.h" />

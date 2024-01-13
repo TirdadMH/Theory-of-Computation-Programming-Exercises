@@ -30,6 +30,4 @@ void addTrapState(std::map<std::string, int> &stateMap, std::vector<std::vector<
 		newStateTransitions.push_back("T");
 	}
 	newStatesTransitionFunction.push_back(newStateTransitions);
-
-	printNewNFA(stateMap, newStatesTransitionFunction, transitionFunction, false);
 }

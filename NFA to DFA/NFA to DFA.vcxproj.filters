@@ -53,5 +53,8 @@
     <ClInclude Include="functions\AddTrapState\AddTrapState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="functions\PrintDFA\PrintDFA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

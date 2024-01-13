@@ -30,9 +30,9 @@ int main()
 	std::vector<std::vector<std::string>> newStatesTransitionFunction = createNewStates(transitionFunction, numberOfStates, numberOfAlphabets);
 	printNewNFA(stateMap, newStatesTransitionFunction, transitionFunction, true);
 
-	// Step 3: Adding the Trap state to complete the Conversion from NFA to DFA
+	// Step 3: Adding the Trap state to complete the Conversion from NFA to DFA and then Printing the Final DFA
 	addTrapState(stateMap, newStatesTransitionFunction, transitionFunction, numberOfStates, numberOfAlphabets);
+	printDFA(stateMap, newStatesTransitionFunction, transitionFunction);
 
-	// Step 4: Now printing the Final DFA
-
+	return 0;
 }

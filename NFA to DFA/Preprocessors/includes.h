@@ -13,3 +13,4 @@
 #include "../functions/CreateNewStates/NewStatesCreator.h"
 #include "../functions/EliminateLambda/LambdaElimination.h"
 #include "../functions/AddTrapState/AddTrapState.h"
+#include "../functions/PrintDFA/PrintDFA.h"

@@ -14,7 +14,7 @@ void printELNFA(std::string** transitionFunction, bool showMessage)
 	// Align the values to the left
 	std::cout << std::left;
 	std::cout << "+---------------+---------------+---------------+---------------+\n";			// Prints the top border
-	std::cout << "|               |       a       |       b       |       c       |\n";			// Prints the header row
+	std::cout << "|State - Symbols|       a       |       b       |       c       |\n";			// Prints the header row
 	std::cout << "+---------------+---------------+---------------+---------------+\n";			// Prints the separator
 	for (int i = A; i <= E; i++)																// Loops through the states
 	{
