@@ -14,6 +14,7 @@ int SMI = 0; // State Map Irritation.
 
 std::vector<std::vector<std::string>> createNewStates(std::string** transitionFunction, int numberOfStates, int numberOfAlphabets)
 {
+	/* PHASE 1: Add new States according to the Transitions with multiply destinations.*/
 	std::vector<std::vector<std::string>> newStatesTransitionFunction;
 	for (int i = 0; i < numberOfStates; i++)
 	{
@@ -54,8 +55,57 @@ std::vector<std::vector<std::string>> createNewStates(std::string** transitionFu
 		}
 	}
 
-
-
+	/* PAHSE 2: check Every single state in the new stateMap to find new states that's been created during PHASE 1.*/
+	for (int i = 0; i < SMI; i++)
+	{
+		// for each destination in the newStatesTransitionFunction:
+		for (int j = 0; j < numberOfAlphabets - 1; j++)
+		{
+			bool foundMatch = false;
+			// this is the currentDestination, where it's value is equal the current destination in the newStatesTransitionFunction array.
+			std::string currentDestination = newStatesTransitionFunction[i][j];
+			for (int k = 0; k < SMI; k++)
+			{
+				// iterate through the map to find the key based on the value
+				std::string currentState = "";
+				for (const auto& pair : stateMap)
+				{
+					if (pair.second == k)
+					{
+						// stop the loop once the key is found
+						currentState = pair.first;
+						break;
+					}
+				}
+				// if foundMatch becomes true, it means that the currentDestination exists in the stateMap.
+				if (currentDestination == currentState)
+					foundMatch = true;
+			}
+			// if it stays false, it means that the currentDestination does not exist in the stateMap and it should be added.
+			if (!foundMatch)
+			{
+				// checking if currentDestination is a single state.
+				if (currentDestination.length() >= 4)
+				{
+					// we add the new state to the stateMap with It's key and value for that Key.
+					stateMap[currentDestination] = SMI;
+					// we create a new TransitionFunction for this new state.
+					std::vector<std::string> newStateTransitions;
+					// for each symbol in the alphabet without Lambda
+					for (int a = 0; a < (numberOfAlphabets - 1); a++)
+					{
+						// we then get the union of every transition for that symbol for the new state.
+						std::string newStateATransitions = extractStateTransitions(currentDestination, (Alphabet)a, transitionFunction);
+						// and then we add it to the transitionFunction for that symbol.
+						newStateTransitions.push_back(newStateATransitions);
+					}
+					// after creating the transitionFunction for the new state, we add it to the rest of new states.
+					newStatesTransitionFunction.push_back(newStateTransitions);
+					SMI++;
+				}
+			}
+		}
+	}
 	return newStatesTransitionFunction;
 }
 

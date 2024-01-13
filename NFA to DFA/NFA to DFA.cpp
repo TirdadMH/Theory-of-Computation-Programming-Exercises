@@ -24,13 +24,15 @@ int main()
 
 	// Step 1: Eliminating the Lambda closure
 	transitionFunction = eliminateLambda(transitionFunction, finalStates, numberOfStates, numberOfAlphabets, states);
-
-	// Printing the Input NFA in a table format with Lambda Transitions Eliminated.
 	printELNFA(transitionFunction, true);
 
 	// Step 2: Creating New States according to a, b, c transitions
 	std::vector<std::vector<std::string>> newStatesTransitionFunction = createNewStates(transitionFunction, numberOfStates, numberOfAlphabets);
-	
-	// Printing what we have achieved so far:
-	printNewNFA(stateMap, newStatesTransitionFunction, transitionFunction);
+	printNewNFA(stateMap, newStatesTransitionFunction, transitionFunction, true);
+
+	// Step 3: Adding the Trap state to complete the Conversion from NFA to DFA
+	addTrapState(stateMap, newStatesTransitionFunction, transitionFunction, numberOfStates, numberOfAlphabets);
+
+	// Step 4: Now printing the Final DFA
+
 }

@@ -8,7 +8,7 @@ void printELNFA(std::string** transitionFunction, bool showMessage)
 {
 	if (showMessage)
 	{
-		std::cout << "\n*******************************************************************\n";
+		std::cout << "\n*********************************************************************************\n";
 		std::cout << "\nSTEP 1: Eliminating the Lambda Transitions: \n\n";
 	}
 	// Align the values to the left

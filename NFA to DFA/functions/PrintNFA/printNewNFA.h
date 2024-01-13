@@ -7,10 +7,13 @@
 #include "../../Enums/Alphabet.h"
 
 
-void printNewNFA(std::map<std::string, int> stateMap, std::vector<std::vector<std::string>> newStatesTransitionFunction, std::string** transitionFunction)
+void printNewNFA(std::map<std::string, int> stateMap, std::vector<std::vector<std::string>> newStatesTransitionFunction, std::string** transitionFunction, bool showMessage)
 {
-	std::cout << "\n*******************************************************************\n";
-	std::cout << "\nSTEP 2: Creating New States according to multiple transitions: \n\n";
+	if (showMessage)
+	{
+		std::cout << "\n*********************************************************************************\n";
+		std::cout << "\nSTEP 2: Creating New States according to transitions with multiply destination.: \n\n";
+	}
 	printELNFA(transitionFunction, false);
 	std::cout << std::left;
 	for (int i = 0; i < stateMap.size(); i++)													// Loops through the states

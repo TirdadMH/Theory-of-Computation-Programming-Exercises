@@ -50,5 +50,8 @@
     <ClInclude Include="functions\PrintNFA\printNewNFA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="functions\AddTrapState\AddTrapState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
