@@ -44,5 +44,11 @@
     <ClInclude Include="functions\PrintNFA\PrintELNFA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="functions\CreateNewStates\NewStatesCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="functions\PrintNFA\printNewNFA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

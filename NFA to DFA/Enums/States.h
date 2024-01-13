@@ -7,4 +7,5 @@ enum States
 	C = 2,
 	D = 3,
 	E = 4,
+	LastState = E
 };

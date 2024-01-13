@@ -1,8 +1,6 @@
 ﻿#include "Preprocessors/includes.h"
 #include "Preprocessors/defines.h"
 
-
-
 int main()
 {
 	// First, let's define out input NFA.
@@ -14,7 +12,7 @@ int main()
 	// since the 4th tuple can change along the way of converting NFA to DFA, It's better to be a Vector.
 	std::vector<char> finalStates = { 'B', 'D' };
 	
-	// for 5th tuple which is transition function, We are going to need an the number of states and alphabets:
+	// for the 5th tuple which is transition function, We are going to need an the number of states and alphabets:
 	int numberOfStates = sizeof(states) / sizeof(states[0]);
 	int numberOfAlphabets = sizeof(alphabet) / sizeof(alphabet[0]);
 
@@ -28,5 +26,11 @@ int main()
 	transitionFunction = eliminateLambda(transitionFunction, finalStates, numberOfStates, numberOfAlphabets, states);
 
 	// Printing the Input NFA in a table format with Lambda Transitions Eliminated.
-	printELNFA(transitionFunction);
+	printELNFA(transitionFunction, true);
+
+	// Step 2: Creating New States according to a, b, c transitions
+	std::vector<std::vector<std::string>> newStatesTransitionFunction = createNewStates(transitionFunction, numberOfStates, numberOfAlphabets);
+	
+	// Printing what we have achieved so far:
+	printNewNFA(stateMap, newStatesTransitionFunction, transitionFunction);
 }

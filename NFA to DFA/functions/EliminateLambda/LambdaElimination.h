@@ -9,6 +9,7 @@ char mapEnumStates(States);
 std::string* getTargetTransitions(std::string*, std::string*, int, int, int);
 bool isFinalState(char, std::vector<char>);
 bool isCurrentStateInFinalStates(std::vector<char>, char);
+std::string formatToStandard(std::string);
 
 #pragma warning(disable:6386)
 #pragma warning(disable:6385)
@@ -32,7 +33,7 @@ std::string** eliminateLambda(std::string** transitionFunction, std::vector<char
 		}
 
 		int numberOfTargetStates = getNumber0fTargetStates(targetStates, numberOfStates);
-		if (getNumber0fTargetStates == 0)
+		if (numberOfTargetStates == 0)
 			continue;
 		for (int j = 0; j < numberOfTargetStates; j++)
 		{
@@ -128,7 +129,6 @@ std::string* getTargetTransitions(std::string* currentTransitions, std::string* 
 				}
 			}
 		}
-		
 		std::string toAppend = "";
 		for (int a = 0; a < Tsize; a++)
 		{
@@ -161,40 +161,7 @@ std::string* getTargetTransitions(std::string* currentTransitions, std::string* 
 			else
 				currentTransitions[i].append(toAppend);
 		}
-		if (i > 1) // HARD-Codded
-		{
-			std::string input = currentTransitions[i];
-			std::string formattedString;
-			std::string alphabeticChars;
-			for (char c : input) 
-			{
-				if (std::isalpha(c)) 
-				{
-					alphabeticChars += c;
-				}
-				else if (!alphabeticChars.empty()) 
-				{
-					// If we encounter a non-alphabetic character and we have collected alphabetic characters
-					if (!formattedString.empty()) 
-					{
-						formattedString += ", ";
-					}
-					formattedString += alphabeticChars;
-					alphabeticChars.clear();  // Clear the collected alphabetic characters
-				}
-			}
-
-			// Add the last group of alphabetic characters
-			if (!alphabeticChars.empty()) 
-			{
-				if (!formattedString.empty()) 
-				{
-					formattedString += ", ";
-				}
-				formattedString += alphabeticChars;
-			}
-			currentTransitions[i] = formattedString;
-		}
+		currentTransitions[i] = formatToStandard(currentTransitions[i]);
 	}
 	return currentTransitions;
 }

@@ -133,9 +133,11 @@
   <ItemGroup>
     <ClInclude Include="Enums\Alphabet.h" />
     <ClInclude Include="Enums\States.h" />
+    <ClInclude Include="functions\CreateNewStates\NewStatesCreator.h" />
     <ClInclude Include="functions\EliminateLambda\LambdaElimination.h" />
     <ClInclude Include="functions\FillingTransition\fillTransitionFunction.h" />
     <ClInclude Include="functions\PrintNFA\PrintELNFA.h" />
+    <ClInclude Include="functions\PrintNFA\printNewNFA.h" />
     <ClInclude Include="functions\PrintNFA\printNFA.h" />
     <ClInclude Include="Preprocessors\defines.h" />
     <ClInclude Include="Preprocessors\includes.h" />
