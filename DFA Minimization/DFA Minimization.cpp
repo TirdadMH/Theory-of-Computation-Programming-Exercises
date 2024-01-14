@@ -9,16 +9,14 @@ int main()
     * then head to the fillTransitionFunction to change the Transition Function for the 5th tuple.
     */
 
-    // first 3 tuples of a DFA
-    char states[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
+    // first 4 tuples of a DFA
+    std::vector<char> states = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
     char starter = 'A';
     char alphabets[] = { 'a', 'b' };
-
-    // 4th tuple
     std::vector<char> finalStates = {'A', 'D', 'E', 'H'};
 
     // Get the size of states and alphabets arrays
-    int numberOfStates = sizeof(states) / sizeof(states[0]);
+    int numberOfStates = states.size();
     int numberOfAlphabets = sizeof(alphabets) / sizeof(alphabets[0]);
 
     // 5th tuple
@@ -31,6 +29,7 @@ int main()
     std::vector<std::vector<char>> TransitionFunction = eliminateUnreachableStates(transitionFunction, starter, numberOfStates, numberOfAlphabets, finalStates, states);
     printCleanDFA(TransitionFunction, newStateMap);
 
-
+    // STEP 2: Use Hopcroft's algorithm for DFA minimization
+    std::vector<std::vector<char>> minimizedDFA = minimizeDFA(TransitionFunction, states, finalStates, numberOfAlphabets);
 }
 

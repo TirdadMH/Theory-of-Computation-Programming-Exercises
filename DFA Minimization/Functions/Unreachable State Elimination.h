@@ -3,10 +3,10 @@
 #include <algorithm>
 
 std::map<int, char> newStateMap;
-std::vector<char> removeUnreachable(std::vector<char> finalStates, std::vector<char> reachableStates, int numberOfStates, char states[]);
+std::vector<char> removeUnreachable(std::vector<char> finalStates, std::vector<char> reachableStates, int numberOfStates, std::vector<char> states);
 
 // For this function, I have used the famous algorithm for eliminating unreachable states.
-std::vector<std::vector<char>> eliminateUnreachableStates(char** transitionFunction, char starter, int& numberOfStates, int numberOfAlphabets, std::vector<char> finalStates, char states[])
+std::vector<std::vector<char>> eliminateUnreachableStates(char** transitionFunction, char starter, int& numberOfStates, int numberOfAlphabets, std::vector<char> &finalStates, std::vector<char> &states)
 {
 
     // Vector of reachable states
@@ -31,7 +31,8 @@ std::vector<std::vector<char>> eliminateUnreachableStates(char** transitionFunct
                 char destination = transitionFunction[state][symbol];
 
                 // If the destination is not in reachable states, add it to temp
-                if (std::find(reachableStates.begin(), reachableStates.end(), destination) == reachableStates.end()) {
+                if (std::find(reachableStates.begin(), reachableStates.end(), destination) == reachableStates.end()) 
+                {
                     temp.push_back(destination);
                 }
             }
@@ -48,6 +49,9 @@ std::vector<std::vector<char>> eliminateUnreachableStates(char** transitionFunct
     
     // update the Final states array
     finalStates = removeUnreachable(finalStates, reachableStates, numberOfStates, states);
+
+    // update the states array with reachable states
+    states = reachableStates;
 
     // update the number of states
     numberOfStates = reachableStates.size();
@@ -69,7 +73,7 @@ std::vector<std::vector<char>> eliminateUnreachableStates(char** transitionFunct
 	return cleanTransitionFunction;
 }
 
-std::vector<char> removeUnreachable(std::vector<char> finalStates, std::vector<char> reachableStates, int numberOfStates, char states[])
+std::vector<char> removeUnreachable(std::vector<char> finalStates, std::vector<char> reachableStates, int numberOfStates, std::vector<char> states)
 {
     // make a new array of final states
     std::vector<char> newFinalStates;
@@ -94,5 +98,6 @@ std::vector<char> removeUnreachable(std::vector<char> finalStates, std::vector<c
                 finalStates.erase(finalStates.begin() + i);
         }
     }
+
     return finalStates;
 }
