@@ -28,6 +28,6 @@ int main()
     printRawDFA(transitionFunction, numberOfStates, numberOfAlphabets);
 
     // STEP 1: Eliminate any unreachable states & Print the new DFA
-    std::vector<std::vector<char>> TransitionFunction = eliminateUnreachableStates(transitionFunction, states, numberOfStates, numberOfAlphabets);
+    std::vector<std::vector<char>> TransitionFunction = eliminateUnreachableStates(transitionFunction, starter, numberOfStates, numberOfAlphabets);
     printCleanDFA(TransitionFunction, newStateMap);
 }

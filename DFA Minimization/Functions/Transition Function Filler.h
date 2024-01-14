@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable:6386)
 char** fillTransitionFunction(char** &transitionFunction, int numberOfStates, int numberOfAlphabets)
 {
 	transitionFunction = new char * [numberOfStates];
