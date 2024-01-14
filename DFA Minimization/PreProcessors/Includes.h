@@ -6,3 +6,4 @@
 #include "../Functions/Transition Function Filler.h"
 #include "../Functions/Printing Functions/Raw DFA Printer.h"
 #include "../Functions/Unreachable State Elimination.h"
+#include "../Functions/Printing Functions/Clean DFA Printer.h"

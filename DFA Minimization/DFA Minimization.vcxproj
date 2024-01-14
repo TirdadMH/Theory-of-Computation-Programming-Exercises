@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="Enums\Alphabets.h" />
     <ClInclude Include="Enums\States.h" />
+    <ClInclude Include="Functions\Printing Functions\Clean DFA Printer.h" />
     <ClInclude Include="Functions\Printing Functions\Raw DFA Printer.h" />
     <ClInclude Include="Functions\Transition Function Filler.h" />
     <ClInclude Include="Functions\Unreachable State Elimination.h" />

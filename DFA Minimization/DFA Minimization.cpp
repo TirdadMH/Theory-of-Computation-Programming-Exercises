@@ -24,9 +24,10 @@ int main()
     // 5th tuple
     char** transitionFunction = fillTransitionFunction(transitionFunction, numberOfStates, numberOfAlphabets);
 
-    // Printing the unoptimized DFA
+    // Print the unoptimized DFA
     printRawDFA(transitionFunction, numberOfStates, numberOfAlphabets);
 
-    // STEP 1: Eliminate any unreachable states
-    std::vector<std::vector<char>> cleanTransitionFunction;
+    // STEP 1: Eliminate any unreachable states & Print the new DFA
+    std::vector<std::vector<char>> TransitionFunction = eliminateUnreachableStates(transitionFunction, states, numberOfStates, numberOfAlphabets);
+    printCleanDFA(TransitionFunction, newStateMap);
 }
