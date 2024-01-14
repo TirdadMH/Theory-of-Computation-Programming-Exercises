@@ -3,6 +3,13 @@
 
 int main()
 {
+	/*
+	* everything works dynamically. so feel free to change the NFA.
+	* If you want to test another NFA, you need to adjust the TransitionFunction in the fillTransitionFunction function and 
+		Enums referring to the states & alphabets. optionally, you can adjust the printing functions too.
+	* IMPORTANT: HARD-CODDED labeled parts of LambdaElimination header file need to change according to the new input NFA
+	*/
+	
 	// First, let's define out input NFA.
 	// 3 first tuple for the NFA:
 	char states[] = {'A', 'B', 'C', 'D', 'E'};

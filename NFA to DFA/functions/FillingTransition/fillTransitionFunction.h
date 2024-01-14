@@ -14,7 +14,7 @@ std::string** fillTransitionFunction(int& numberOfStates, int& numberOfAlphabets
 		transitionFunction[i] = new std::string[numberOfAlphabets];
 	}
 
-	// Filling the Transition Function be like:
+	// Filling Transition Function be like:
 	transitionFunction[A][a] = 'B';
 	transitionFunction[A][b] = NO_STATE;
 	transitionFunction[A][c] = 'C';

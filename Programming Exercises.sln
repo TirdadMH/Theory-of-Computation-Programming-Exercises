@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34414.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NFA to DFA", "NFA to DFA\NFA to DFA.vcxproj", "{DBDC4DAB-6930-415B-A659-C4D90682728F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DFA Minimization", "DFA Minimization\DFA Minimization.vcxproj", "{3940EF83-FDF3-490C-A415-F44B05B16B03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -14,13 +16,20 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DBDC4DAB-6930-415B-A659-C4D90682728F}.Debug|x64.ActiveCfg = Debug|x64
-		{DBDC4DAB-6930-415B-A659-C4D90682728F}.Debug|x64.Build.0 = Debug|x64
 		{DBDC4DAB-6930-415B-A659-C4D90682728F}.Debug|x86.ActiveCfg = Debug|Win32
 		{DBDC4DAB-6930-415B-A659-C4D90682728F}.Debug|x86.Build.0 = Debug|Win32
 		{DBDC4DAB-6930-415B-A659-C4D90682728F}.Release|x64.ActiveCfg = Release|x64
 		{DBDC4DAB-6930-415B-A659-C4D90682728F}.Release|x64.Build.0 = Release|x64
 		{DBDC4DAB-6930-415B-A659-C4D90682728F}.Release|x86.ActiveCfg = Release|Win32
 		{DBDC4DAB-6930-415B-A659-C4D90682728F}.Release|x86.Build.0 = Release|Win32
+		{3940EF83-FDF3-490C-A415-F44B05B16B03}.Debug|x64.ActiveCfg = Debug|x64
+		{3940EF83-FDF3-490C-A415-F44B05B16B03}.Debug|x64.Build.0 = Debug|x64
+		{3940EF83-FDF3-490C-A415-F44B05B16B03}.Debug|x86.ActiveCfg = Debug|Win32
+		{3940EF83-FDF3-490C-A415-F44B05B16B03}.Debug|x86.Build.0 = Debug|Win32
+		{3940EF83-FDF3-490C-A415-F44B05B16B03}.Release|x64.ActiveCfg = Release|x64
+		{3940EF83-FDF3-490C-A415-F44B05B16B03}.Release|x64.Build.0 = Release|x64
+		{3940EF83-FDF3-490C-A415-F44B05B16B03}.Release|x86.ActiveCfg = Release|Win32
+		{3940EF83-FDF3-490C-A415-F44B05B16B03}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
